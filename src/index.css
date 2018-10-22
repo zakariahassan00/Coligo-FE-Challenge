@@ -1,14 +1,443 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+
+
+body {
+  margin: 0 2px;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #d3d3d3	;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  display: flex;
+}
+
+/********* Sidebar *********/
+.sidebar {
+  width: 15%;
+  height: 100vh;
+  margin-right: 10px;
+  background-color: #2E8B57;
+}
+
+.sidebar_head {
+  text-align: center;
+  margin: 2em 0;
+  color: #fff;
+}
+
+.sidebar_head a {
+  color: #d3d3d3;
+}
+
+.sidebar_body {
+  margin: 3em 0 0 ;
+  padding: 5px 5px ;
+}
+
+.sidebar_body ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar_body ul li{
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  margin: 5px 0 ;
+  padding: 5px 5px ;
+}
+
+.sidebar_body ul li i{
+  font-size: 1.5em;
+  margin: 5px 10px;
+  width: 27px;
+  height: 27px;
+}
+
+.sidebar_body ul li a{
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.item:hover {
+  background-color: #d3d3d3;
+  color: #2E8B57;
+  cursor: pointer;
+}
+
+/********** Navbar **********/
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: #2E8B57;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.nav_item {
+  margin: 15px 0;
+}
+
+.nav_heading {
+  width: 50%;
+  padding: 0 40px;
+}
+
+.nav_heading h1 {
+  font-weight: 300;
+  font-size: 1.8em;
+}
+
+.nav_search {
+  width: 25%;
+  background-color: #fff;
+  margin: 20px 0 ;
+  border-radius: 40px;
+}
+
+.nav_search input {
+  position: relative;
+  left: 15px;
+  border: none;
+  height: 100%;
+  outline: none;
+  width: 200px;
+}
+
+.nav_search button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #2E8B57;
+  position: relative;
+  left: 10px;
+}
+
+
+
+.nav_notification {
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.nav_notification i {
+  font-size: 1.6em;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.nav_notification span {
+  width: 17px;
+  height: 17px;
+  font-size: 12px;
+  background-color: red;
+  color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px #fff solid;
+
+}
+
+.account  {
+  width: 30% ;
+  height: 50px;
+}
+
+.account div {
+  width: 50px;
+  height: 50px;
+  border: 1px solid saddlebrown;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.account div img {
+  width: 50px;
+  height: 50px;
+}
+
+.mail {
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+.bell {
+  width: 20%;
+  text-align: center;
+  position: relative;
+}
+
+.main {
+  position: relative;
+  width: 85% ;
+}
+.container {
+  width: calc(100% - 20px);
+  height: calc(100% - 100px);
+  margin: 15px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/********** Jumbotrone **********/
+.Jumbotrone {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.jumbo_heading {
+  margin: 10px 0;
+  font-weight: 600;
+  color: #808080;
+}
+
+.jumbo_body p{
+  margin: 5px 0 ;
+  font-size: 1.2em; 
+}
+
+.jumbo_body p:last-child{
+  font-size: .95em;
+  margin: 20px 0 0; 
+  font-style: italic; 
+  color: #808080;
+}
+
+#jumbo_button {
+  margin: 10px 0;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  background-color: #2E8B57;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.jumbo_content {
+  padding: 15px 30px;
+  width: 50%;
+}
+
+.jumbo_image {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.jumbo_image img{
+  display: block;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  right: 0;  
+  padding: 0 10px;
+}
+
+
+
+/********** Announcements **********/
+.announcements {
+  width: 68%;
+  height: 400px;
+  margin: 20px 0 0;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* .announcements:hover {
+} */
+
+.announ_heading {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+
+.announ_heading a {
+  position: absolute;
+  top:0;
+  right: 0;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #2E8B57;
+}
+
+.announ_body {
+  width: 100%;
+  padding: 0 5px;
+  margin: 10px 0;
+  height: calc(100% - 70px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Announcements Post */
+.post {
+  width: 100%;
+  /* min-height: 80px; */
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.post_head {
+  width: 30%;
+  display: flex;
+  height: 80px;
+  border-right: 1px #2E8B57 solid;
+}
+
+.post_img {
+  width: 27%;
+}
+
+.post_info {
+  width: 73%;
+}
+
+.post_info h4 {
+  font-weight: 500;
+}
+
+.post_info p {
+  color: #808080;  
+}
+
+.post_img img {
+  border: #2E8B57 1px solid;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.post_body {
+  width: 70%;
+  padding: 0 10px 10px;
+  text-align: justify;
+  color: #808080;
+  margin: 0 0 10px;
+}
+
+#loading h1{
+  font-weight: 500;
+  color: #2E8B57;
+  text-align: center;
+}
+
+/*********** WhatsDue  ***********/
+
+.whatsDue {
+  width: 30%;
+  min-height: 300px;
+  border-radius: 5px;
+  margin: 20px 0 0;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.todo_head {
+  position: relative;
+}
+
+.todo_head p {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 5px;
+}
+
+.todo_head a {
+  position: absolute;
+  top:0;
+  right: 0;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #2E8B57;
+}
+
+.todo_body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5px;
+  margin: 10px 0 ;
+}
+
+.todo_content {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px #808080 solid;
+  margin-bottom: 5px;
+  padding: 25px 5px;
+}
+
+.todo_content:last-child {
+  margin-bottom: 0;
+  border: none;
+}
+
+.todo_title {
+  color: #2E8B57;
+  margin-bottom: 5px;
+} 
+
+.todo_title i {
+  color: #2E8B57;
+}
+
+.todo_info {
+  color: #808080;
+  line-height: 1.5em;
+}
+
+#todo_btn {
+  width: 99%;
+  height: 30px;
+  border: 2px #2E8B57 solid;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #2E8B57;
+  font-weight: bold;
+  margin: 35px 0 10px;
+  cursor: pointer;
+}
+
