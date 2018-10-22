@@ -12,30 +12,29 @@ class Announcements extends Component {
         }
 
         fakeAnnouncmentService () {
-            const fakeData = [            {
-                memberName: 'Mr.Ahmed Mostafa',
-                img : './images/member-2.jpg',
-                department: 'Math 101',
-                post : 'hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
-            },
-            {
-                memberName: 'Mrs.Salma Ahmed',
-                img : './images/member-1.jpg',
-                department: 'Physics 02',
-                post : 'hi my heros i want you ready to our exams hi my heros i want you ready to our exams hi my heros i want you ready to our exams hi my heros i want you ready to our exams hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
-            },
-            {
-                memberName: 'School Managment',
-                img : './images/member-3.jpg',
-                department: 'Managment',
-                post : 'hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
-            },
-            {
-                memberName: 'School Managment',
-                img : './images/member-3.jpg',
-                department: 'Managment',
-                post : 'hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
-            }];
+            const fakeData = [
+                {
+                    id:0,
+                    memberName: 'Mr.Ahmed Mostafa',
+                    img : './images/member-2.jpg',
+                    department: 'Math 101',
+                    post : 'hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
+                },
+                {
+                    id:1,
+                    memberName: 'Mrs.Salma Ahmed',
+                    img : './images/member-1.jpg',
+                    department: 'Physics 02',
+                    post : 'hi my heros i want you ready to our exams hi my heros i want you ready to our exams hi my heros i want you ready to our exams hi my heros i want you ready to our exams hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
+                },
+                {
+                    id:2,
+                    memberName: 'School Managment',
+                    img : './images/member-3.jpg',
+                    department: 'Managment',
+                    post : 'hi my heros i want you ready to our exams and focus on remaining assesments to gain more grades, good luck my warriors'
+                },
+            ];
             return fakeData;    
         }
 
@@ -54,10 +53,10 @@ class Announcements extends Component {
                 // if the state is true the content
                     (<div className="announ_body">
                     {this.state.members.map( (member) => (
-                        <div className="post">
+                        <div className="post" key={member.id}>
                             <div className="post_head">
                                 <div className="post_img">
-                                    <img src={member.img} alt="member photo"/>
+                                    <img src={member.img} alt="member face"/>
                                 </div>
                                 <div className="post_info">
                                     <h4>{member.memberName}</h4>

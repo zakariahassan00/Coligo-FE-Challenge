@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class Navbar extends Component {
     state = {
         profile: {
-            name: 'Zakaria',
+            name: 'Talia',
             messages: 7 ,
             notifications : 4,
             img: "./images/profile.jpg"
@@ -23,21 +23,21 @@ class Navbar extends Component {
         return(
             <nav>
                 <div className="nav_item nav_heading">
-                    <h1>Welcome {this.state.profile.name}</h1>
+                    <h1>Welcome {this.state.profile.name},</h1>
                 </div>
 
                 <div className="nav_item nav_search">
-                    <button type="submit"  ><i class="fa fa-search"></i></button>
+                    <button type="submit"  ><i className="fa fa-search"></i></button>
                     <input id="search_box" type="text" placeholder="Search" onChange={this.search}/>
                 </div>
 
                 <div className="nav_item nav_notification">
                     <div className="bell">
-                        <i class="fas fa-bell"></i>
+                        <i className="fas fa-bell"></i>
                         <span id="noti">{this.state.profile.notifications}</span>
                     </div>
                     <div className="mail">
-                        <i class="fas fa-envelope"></i>
+                        <i className="fas fa-envelope"></i>
                         <span id="msg">{this.state.profile.messages}</span>
                     </div>
                     <div className="account">

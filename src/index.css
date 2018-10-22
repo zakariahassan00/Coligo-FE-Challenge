@@ -272,17 +272,19 @@ nav {
 /********** Announcements **********/
 .announcements {
   width: 68%;
-  height: 400px;
+  min-height: 170px;
+  max-height: 400px;
   margin: 20px 0 0;
   border: 0;
   border-radius: 5px;
   background-color: #fff;
   padding: 20px;
+  
+  /* the overflow is hidden to make it max of 3 posts 
+  if the user want more then he should click all button
+   */
   overflow: hidden;
 }
-
-/* .announcements:hover {
-} */
 
 .announ_heading {
   width: 100%;
@@ -304,7 +306,7 @@ nav {
   width: 100%;
   padding: 0 5px;
   margin: 10px 0;
-  height: calc(100% - 70px);
+  /* height: calc(100% - 70px); */
   display: flex;
   flex-wrap: wrap;
 }
@@ -364,9 +366,9 @@ nav {
 
 /*********** WhatsDue  ***********/
 
+
 .whatsDue {
   width: 30%;
-  min-height: 300px;
   border-radius: 5px;
   margin: 20px 0 0;
   margin-left: 20px;
@@ -440,4 +442,3 @@ nav {
   margin: 35px 0 10px;
   cursor: pointer;
 }
-

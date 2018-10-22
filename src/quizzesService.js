@@ -1,9 +1,13 @@
-const URL = "http://test.coligolms.com/api/quiz";
+/*
+ * service that is used to get quiz data from the specified endpoint (url) using separated 
+ * external http logic
+ */
 
-// this service is responsible for getting all the quiz data from the fake end point (url)
-export const getAll = () => {
-    fetch(URL)
-        .then(res => res.json())
-        .then(data => data);
-}
+import * as HTTP from './httpRequest';
 
+// Fake endpoint
+const url = 'http://test.coligolms.com/api/quiz';
+
+export const getQuizzes = () => 
+    HTTP.getAll(url)
+    .then(response => response)

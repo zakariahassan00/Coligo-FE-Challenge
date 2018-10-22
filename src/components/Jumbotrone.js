@@ -1,3 +1,7 @@
+/* 
+ * stateless jumbotrone component (since no need for any state in the side bar at least for this version of APP) 
+ */
+
 import React from 'react';
 
 const Jumbotrone = (props) => {

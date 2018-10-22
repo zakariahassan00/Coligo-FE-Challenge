@@ -1,9 +1,15 @@
-const URL = "http://test.coligolms.com/api/announcement";
+/*
+ * service that is used to get announcemet data from the specified endpoint (url) using separated 
+ * external http logic
+ */
 
-// this service is responsible for getting all the announcements data from the fake end point (url)
-export const getAll = () => {
-    fetch(URL)
-        .then(res => res.json())
-        .then(data => data);
-}
+import * as HTTP from './httpRequest';
+
+// FAKE endpoint
+const url = 'http://test.coligolms.com/api/announcement';
+
+export const getAnnouncemets = () => 
+    HTTP.getAll(url)
+    .then(response => response)
+
 
