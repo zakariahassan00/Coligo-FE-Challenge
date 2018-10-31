@@ -12,11 +12,10 @@ class Navbar extends Component {
         }
     }
 
-    search () {
+    search = () => {
         // this function fires on search for something
         //  get the the search word then do whatever with it
-        let searchWord = document.getElementById('search_box').value ;
-        console.log(searchWord);
+        console.log(this.search.value) ;
     } 
     
     render() {
@@ -28,7 +27,7 @@ class Navbar extends Component {
 
                 <div className="nav_item nav_search">
                     <button type="submit"  ><i className="fa fa-search"></i></button>
-                    <input id="search_box" type="text" placeholder="Search" onChange={this.search}/>
+                    <input ref={ input => (this.search = input)} type="text" placeholder="Search" onChange={this.search}/>
                 </div>
 
                 <div className="nav_item nav_notification">

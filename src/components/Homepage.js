@@ -9,7 +9,7 @@ class HomePage extends Component {
     render() {
       return (
         <div className="App">
-          <Sidebar />
+            <Sidebar />
           <div className="main">
             <Navbar />
             <div className="container">

@@ -1,38 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getTodos } from '../actions/todosAction';
 
 class WhatsDue extends Component {
-    state = {}
 
-    componentDidMount() {
-        // when the component mount get the data from the fake quizes from fakeAnnouncmentService
-        const todos = this.fakeQuizesService ();
-        this.setState({todos});
-    }
-
-    fakeQuizesService () {
-        const fakeData = [
-        {
-            todo: 'quiz',
-            todoName: 'Unit 2 Quiz',
-            id: 0,
-            img : 'fas fa-hourglass-half',
-            course: 'Physics 02',
-            topic : 'Unit 2 Motion and forces',
-            dueTo: '20 Dec 2017 - 09:00 PM',
-            btn: 'Start Quiz'
-        },
-        {
-            todo: 'Assigmment',
-            todoName: '12 - 12 Assignment',
-            id: 1,
-            img : 'fas fa-clipboard-check',
-            course: 'Arabic K12',
-            topic : 'الوحده الثانيه - الافعال',
-            dueTo: '20 Dec 2017 - 09:00 PM',
-            btn: 'Solve Assignment'
-        },
-    ];
-        return fakeData;    
+    // getting the fake data from redux
+    componentWillMount() {
+        this.props.getTodos();
     }
 
     render() {
@@ -43,11 +17,14 @@ class WhatsDue extends Component {
                     <p>Somtimes "LATER" becomes "NEVER. Go Now!</p>
                     <a href="/">All</a>
                 </div>
+
                 
-            {
-                this.state.todos ? (
-                    <div className="todo_body">
-                        {this.state.todos.map( (todo) => (
+                {/* first check props.tods whether its ture or false  */}
+                {this.props.todos ?
+
+                    // if the props.todos is true render the content
+                    (<div className="todo_body">
+                        {this.props.todos.map( (todo) => (
                             <div className="todo_content" key={todo.id}>
                                 <div className="todo_title">
                                     <h4><span><i className={todo.img}></i></span> {todo.todoName}</h4>
@@ -61,6 +38,8 @@ class WhatsDue extends Component {
                             </div>
                         ))}
                     </div>) :
+
+                // if the props.todos is false render Loading
                 (
                     <div id="loading"><h1>Loading...</h1></div>
                 )
@@ -70,4 +49,8 @@ class WhatsDue extends Component {
     }
 }
 
-export default WhatsDue 
+const mapStateToProps = state => ({
+    todos : state.todos.data
+})
+
+export default connect(mapStateToProps , {getTodos}) (WhatsDue) 
