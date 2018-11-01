@@ -1,52 +1,60 @@
 // this is hard coded navbar , but its values can be replaced by any external data any time
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Navbar extends Component {
-    state = {
-        profile: {
-            name: 'Talia',
-            messages: 7 ,
-            notifications : 4,
-            img: "./images/profile.jpg"
-        }
+  state = {
+    profile: {
+      name: "Talia",
+      messages: 7,
+      notifications: 4,
+      img: "./images/profile.jpg"
     }
+  };
 
-    search = () => {
-        // this function fires on search for something
-        //  get the the search word then do whatever with it
-        console.log(this.search.value) ;
-    } 
-    
-    render() {
-        return(
-            <nav>
-                <div className="nav_item nav_heading">
-                    <h1>Welcome {this.state.profile.name},</h1>
-                </div>
+  search = () => {
+    // this function fires on search for something
+    //  get the the search word then do whatever with it
+    console.log(this.search.value);
+  };
 
-                <div className="nav_item nav_search">
-                    <button type="submit"  ><i className="fa fa-search"></i></button>
-                    <input ref={ input => (this.search = input)} type="text" placeholder="Search" onChange={this.search}/>
-                </div>
+  render() {
+    return (
+      <nav>
+        <div className="nav_item nav_heading">
+          <h1>Welcome {this.state.profile.name},</h1>
+        </div>
 
-                <div className="nav_item nav_notification">
-                    <div className="bell">
-                        <i className="fas fa-bell"></i>
-                        <span id="noti">{this.state.profile.notifications}</span>
-                    </div>
-                    <div className="mail">
-                        <i className="fas fa-envelope"></i>
-                        <span id="msg">{this.state.profile.messages}</span>
-                    </div>
-                    <div className="account">
-                        <div><img src={this.state.profile.img} alt="das"/></div>
-                    </div>
-                </div>
-            </nav>
-        )
-    }
+        <div className="nav_item nav_search">
+          <button type="submit">
+            <i className="fa fa-search" />
+          </button>
+          <input
+            ref={input => (this.search = input)}
+            type="text"
+            placeholder="Search"
+            onChange={this.search}
+          />
+        </div>
 
+        <div className="nav_item nav_notification">
+          <div className="bell">
+            <i className="fas fa-bell" />
+            <span id="noti">{this.state.profile.notifications}</span>
+          </div>
+          <div className="mail">
+            <i className="fas fa-envelope" />
+            <span id="msg">{this.state.profile.messages}</span>
+          </div>
+          <div className="account">
+            <div>
+              <img src={this.state.profile.img} alt="das" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 }
 
-export default Navbar
+export default Navbar;

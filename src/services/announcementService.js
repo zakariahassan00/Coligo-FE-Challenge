@@ -3,13 +3,10 @@
  * external http logic
  */
 
-import * as HTTP from './httpRequest';
+import * as HTTP from "./httpRequest";
 
 // FAKE endpoint
-const url = 'http://test.coligolms.com/api/announcement';
+const url = "http://test.coligolms.com/api/announcement";
 
-export const getAnnouncemets = () => 
-    HTTP.getAll(url)
-    .then(response => response)
-
-
+export const getAnnouncemets = () =>
+  HTTP.getAll(url).then(response => response);

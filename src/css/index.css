@@ -13,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d3d3d3	;
+  background-color: #d3d3d3;
 }
 
 code {
@@ -31,8 +31,12 @@ code {
   width: 15%;
   height: 100vh;
   position: relative;
-  background-color: #2E8B57;
-  background-image: linear-gradient(to bottom , #191970 , rgba(255, 255, 255, 0.411));
+  background-color: #2e8b57;
+  background-image: linear-gradient(
+    to bottom,
+    #191970,
+    rgba(255, 255, 255, 0.411)
+  );
 }
 
 .sidebar_head {
@@ -46,8 +50,8 @@ code {
 }
 
 .sidebar_body {
-  margin: 3em 0 0 ;
-  padding: 5px 5px ;
+  margin: 3em 0 0;
+  padding: 5px 5px;
 }
 
 .sidebar_body ul {
@@ -55,22 +59,22 @@ code {
   flex-wrap: wrap;
 }
 
-.sidebar_body ul li{
+.sidebar_body ul li {
   width: 100%;
   height: 50px;
   color: #fff;
-  margin: 5px 0 ;
-  padding: 5px 5px ;
+  margin: 5px 0;
+  padding: 5px 5px;
 }
 
-.sidebar_body ul li i{
+.sidebar_body ul li i {
   font-size: 1.5em;
   margin: 5px 10px;
   width: 27px;
   height: 27px;
 }
 
-.sidebar_body ul li div{
+.sidebar_body ul li div {
   color: #fff;
   display: block;
   width: 100%;
@@ -79,7 +83,7 @@ code {
 
 .item:hover {
   background-color: #d3d3d3;
-  color: #2E8B57;
+  color: #2e8b57;
   cursor: pointer;
 }
 
@@ -110,7 +114,7 @@ nav {
 .nav_search {
   width: 25%;
   background-color: #fff;
-  margin: 20px 0 ;
+  margin: 20px 0;
   border-radius: 40px;
 }
 
@@ -132,15 +136,12 @@ nav {
   left: 10px;
 }
 
-
-
 .nav_notification {
   width: 25%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-
 
 .nav_notification i {
   font-size: 1.6em;
@@ -160,11 +161,10 @@ nav {
   top: 8px;
   right: 8px;
   border: 1px #fff solid;
-
 }
 
-.account  {
-  width: 30% ;
+.account {
+  width: 30%;
   height: 50px;
 }
 
@@ -196,7 +196,7 @@ nav {
 
 .main {
   position: relative;
-  width: 85% ;
+  width: 85%;
 }
 .container {
   width: calc(100% - 20px);
@@ -205,7 +205,6 @@ nav {
   display: flex;
   flex-wrap: wrap;
 }
-
 
 /********** Jumbotrone **********/
 .Jumbotrone {
@@ -221,18 +220,17 @@ nav {
   margin: 10px 0;
   font-weight: 600;
   color: #808080;
-
 }
 
-.jumbo_body p{
-  margin: 5px 0 ;
-  font-size: 1.2em; 
+.jumbo_body p {
+  margin: 5px 0;
+  font-size: 1.2em;
 }
 
-.jumbo_body p:last-child{
-  font-size: .95em;
-  margin: 20px 0 0; 
-  font-style: italic; 
+.jumbo_body p:last-child {
+  font-size: 0.95em;
+  margin: 20px 0 0;
+  font-style: italic;
   color: #808080;
 }
 
@@ -259,16 +257,14 @@ nav {
   height: 100%;
 }
 
-.jumbo_image img{
+.jumbo_image img {
   display: block;
   width: 100%;
   height: 200px;
   position: absolute;
-  right: 0;  
+  right: 0;
   padding: 0 10px;
 }
-
-
 
 /********** Announcements **********/
 .announcements {
@@ -280,7 +276,7 @@ nav {
   border-radius: 5px;
   background-color: #fff;
   padding: 20px;
-  
+
   /* the overflow is hidden to make it max of 3 posts 
   if the user want more then he should click all button
    */
@@ -295,7 +291,7 @@ nav {
 
 .announ_heading a {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   text-decoration: none;
   font-size: 1.3em;
@@ -340,7 +336,7 @@ nav {
 }
 
 .post_info p {
-  color: #808080;  
+  color: #808080;
 }
 
 .post_img img {
@@ -359,14 +355,13 @@ nav {
   margin: 0 0 10px;
 }
 
-#loading h1{
+#loading h1 {
   font-weight: 500;
   color: #191970;
   text-align: center;
 }
 
 /*********** WhatsDue  ***********/
-
 
 .whatsDue {
   width: 30%;
@@ -389,7 +384,7 @@ nav {
 
 .todo_head a {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   text-decoration: none;
   font-size: 1.3em;
@@ -401,7 +396,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   padding: 0 5px;
-  margin: 10px 0 ;
+  margin: 10px 0;
 }
 
 .todo_content {
@@ -421,7 +416,7 @@ nav {
 .todo_title {
   color: #191970;
   margin-bottom: 5px;
-} 
+}
 
 .todo_title i {
   color: #191970;
