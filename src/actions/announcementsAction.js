@@ -1,8 +1,9 @@
 import { GET_ANNOUNCEMENTS } from "./types";
-import getFakeAnnouncements from "../services/fakeAnnouncements";
+import * as getFakeAnnouncements from "../services/fakeAnnouncements";
 
 export const getAnnouncements = () => dispatch => {
-  const fakeData = getFakeAnnouncements();
+  const fakeData = getFakeAnnouncements.getAll();
+
   dispatch({
     type: GET_ANNOUNCEMENTS,
     payload: fakeData

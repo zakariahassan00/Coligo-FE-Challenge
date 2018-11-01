@@ -1,4 +1,4 @@
-export default () => [
+export const getAll = () => [
   {
     id: 0,
     todo: "quiz",
