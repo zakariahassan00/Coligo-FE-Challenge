@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Route exact path="/" render={() => <HomePage />} />
+          <Route path="/" render={() => <HomePage />} />
         </div>
       </Provider>
     );

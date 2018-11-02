@@ -1,8 +1,9 @@
 /*
     this is sidebar or navbar item component.
 */
-import React, { Component } from "react";
 
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 class Element extends Component {
   state = {
     setup: {
@@ -13,11 +14,14 @@ class Element extends Component {
   };
 
   render() {
+    const link = this.state.setup.name.toLowerCase();
     return (
-      <div>
-        <i className={this.state.setup.awf} />
-        {this.state.setup.name}
-      </div>
+      <Link to={link}>
+        <div>
+          <i className={this.state.setup.awf} />
+          {this.state.setup.name}
+        </div>
+      </Link>
     );
   }
 }

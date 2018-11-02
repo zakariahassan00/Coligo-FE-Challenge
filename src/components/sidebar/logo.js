@@ -1,18 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Logo extends Component {
   state = {
     setup: {
-      name: this.props.name,
-      img: this.props.img,
-      awf: this.props.awf
+      name: this.props.name
     }
   };
 
   render() {
     return (
       <div>
-        <h1>Coligo</h1>
+        <Link to="/">
+          <h1>{this.state.setup.name}</h1>
+        </Link>
       </div>
     );
   }

@@ -81,6 +81,10 @@ code {
   height: 100%;
 }
 
+.sidebar_body ul li div a {
+  color: #fff;
+}
+
 .item:hover {
   background-color: #d3d3d3;
   color: #2e8b57;

@@ -12,7 +12,7 @@ class Navbar extends Component {
     }
   };
 
-  search = () => {
+  searchWord = () => {
     // this function fires on search for something
     //  get the the search word then do whatever with it
     console.log(this.search.value);
@@ -33,7 +33,7 @@ class Navbar extends Component {
             ref={input => (this.search = input)}
             type="text"
             placeholder="Search"
-            onChange={this.search}
+            onChange={this.searchWord}
           />
         </div>
 
