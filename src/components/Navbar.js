@@ -1,6 +1,8 @@
 // this is hard coded navbar , but its values can be replaced by any external data any time
 
 import React, { Component } from "react";
+import NavSearch from "./common/navSearch";
+import NavProfile from "./common/navProfile";
 
 class Navbar extends Component {
   state = {
@@ -12,46 +14,22 @@ class Navbar extends Component {
     }
   };
 
-  searchWord = () => {
+  handleSearch = query => {
+    this.setState({ query });
     // this function fires on search for something
-    //  get the the search word then do whatever with it
-    console.log(this.search.value);
+    // store it on the state for later use
+    console.log(query);
   };
 
   render() {
+    const { profile } = this.state;
     return (
       <nav>
         <div className="nav_item nav_heading">
-          <h1>Welcome {this.state.profile.name},</h1>
+          <h1>Welcome {profile.name},</h1>
         </div>
-
-        <div className="nav_item nav_search">
-          <button type="submit">
-            <i className="fa fa-search" />
-          </button>
-          <input
-            ref={input => (this.search = input)}
-            type="text"
-            placeholder="Search"
-            onChange={this.searchWord}
-          />
-        </div>
-
-        <div className="nav_item nav_notification">
-          <div className="bell">
-            <i className="fas fa-bell" />
-            <span id="noti">{this.state.profile.notifications}</span>
-          </div>
-          <div className="mail">
-            <i className="fas fa-envelope" />
-            <span id="msg">{this.state.profile.messages}</span>
-          </div>
-          <div className="account">
-            <div>
-              <img src={this.state.profile.img} alt="das" />
-            </div>
-          </div>
-        </div>
+        <NavSearch onSearch={this.handleSearch} />
+        <NavProfile profile={profile} />
       </nav>
     );
   }

@@ -9,6 +9,7 @@ class WhatsDue extends Component {
   }
 
   render() {
+    const { todos } = this.props;
     return (
       <div className="whatsDue">
         <div className="todo_head">
@@ -18,10 +19,10 @@ class WhatsDue extends Component {
         </div>
 
         {/* first check props.tods whether its ture or false  */}
-        {this.props.todos ? (
+        {todos ? (
           // if the props.todos is true render the content
           <div className="todo_body">
-            {this.props.todos.map(todo => (
+            {todos.map(todo => (
               <div className="todo_content" key={todo.id}>
                 <div className="todo_title">
                   <h4>

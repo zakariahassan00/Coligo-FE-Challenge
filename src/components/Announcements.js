@@ -10,6 +10,7 @@ class Announcements extends Component {
   }
 
   render() {
+    const { announcements } = this.props;
     return (
       <div className="announcements">
         <div className="announ_heading">
@@ -19,10 +20,10 @@ class Announcements extends Component {
         </div>
 
         {/*  first check the props.announcemets whether its ture or false */}
-        {this.props.announcements ? (
+        {announcements ? (
           // if the props.announcemets is true the content
           <div className="announ_body">
-            {this.props.announcements.map(announcement => (
+            {announcements.map(announcement => (
               <div className="post" key={announcement.id}>
                 <div className="post_head">
                   <div className="post_img">

@@ -1,10 +1,9 @@
 /* 
  * stateless Sidebar component (since no need for any state in the side bar at least for this version of APP) 
  */
-
 import React, { Component } from "react";
-import Logo from "./sidebar/logo";
-import Element from "./sidebar/element";
+import NavLogo from "./common/sideBarLogo";
+import NavElement from "./common/sideBarElement";
 
 class Sidebar extends Component {
   state = {
@@ -49,20 +48,19 @@ class Sidebar extends Component {
   };
 
   render() {
+    const { elements } = this.state;
     return (
       <div className="sidebar">
         {/* Sidebar logo Component */}
         <div className="sidebar_head">
-          <Logo name={"Coligo"} />
+          <NavLogo name={"Coligo"} />
         </div>
 
         {/* Sidebar elemnts */}
         <div className="sidebar_body">
           <ul>
-            {this.state.elements.map(element => (
-              <li className="item" key={element.id}>
-                <Element name={element.name} awf={element.awf} />
-              </li>
+            {elements.map(element => (
+              <NavElement element={element} />
             ))}
           </ul>
         </div>
