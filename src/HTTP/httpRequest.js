@@ -18,7 +18,7 @@ export const add = (url, data) =>
 
 // PUT Request for updating data on the server
 export const update = (url, data) =>
-  axios.put(url, data).then(response => response.data);
+  axios.put(`${url}/${data.id}`, data).then(response => response.data);
 
 // DELETE Request for removing data from the server
 export const remove = (url, id) =>

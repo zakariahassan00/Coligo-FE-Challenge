@@ -60,7 +60,9 @@ class Sidebar extends Component {
         <div className="sidebar_body">
           <ul>
             {elements.map(element => (
-              <NavElement element={element} />
+              <li className="item" key={element.id}>
+                <NavElement element={element} />
+              </li>
             ))}
           </ul>
         </div>
