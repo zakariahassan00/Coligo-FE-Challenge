@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAnnouncements } from "../actions/announcementsAction";
 import Post from "./common/post";
 import Loading from "./common/loading";
 import SectionTop from "./common/sectionTop";
+import { getAnnouncements } from "../actions/announcementsAction";
 
 class Announcements extends Component {
   // getting the fake data from redux

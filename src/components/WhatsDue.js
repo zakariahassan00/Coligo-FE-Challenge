@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getTodos } from "../actions/todosAction";
 import Loading from "./common/loading";
 import Todo from "./common/todo";
 import SectionTop from "./common/sectionTop";
+import { getTodos } from "../actions/todosAction";
 
 class WhatsDue extends Component {
   // getting the fake data from redux

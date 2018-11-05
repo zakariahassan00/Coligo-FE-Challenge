@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./css/index.css";
-import HomePage from "./components/Homepage";
 import { Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./store/store";
+import HomePage from "./Homepage";
+import store from "../store/store";
+import "../css/index.css";
 
 class App extends Component {
   render() {

@@ -1,5 +1,3 @@
-// this is hard coded navbar , but its values can be replaced by any external data any time
-
 import React, { Component } from "react";
 import NavSearch from "./common/navSearch";
 import NavProfile from "./common/navProfile";
