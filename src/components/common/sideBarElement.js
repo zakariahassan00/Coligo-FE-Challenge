@@ -7,12 +7,14 @@ class SideBarElement extends Component {
     const link = element.name.toLowerCase();
 
     return (
-      <Link to={link}>
-        <div>
-          <i className={element.awf} />
-          {element.name}
-        </div>
-      </Link>
+      <li className="item">
+        <Link to={link}>
+          <div>
+            <i className={element.awf} />
+            {element.name}
+          </div>
+        </Link>
+      </li>
     );
   }
 }

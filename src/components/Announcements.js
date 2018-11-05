@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getAnnouncements } from "../actions/announcementsAction";
+import Post from "./common/post";
+import Loading from "./common/loading";
+import SectionTop from "./common/sectionTop";
 
 class Announcements extends Component {
   // getting the fake data from redux
-  componentWillMount() {
+  componentDidMount() {
     this.props.getAnnouncements();
   }
 
@@ -14,37 +16,24 @@ class Announcements extends Component {
     return (
       <div className="announcements">
         <div className="announ_heading">
-          <h2>Announcements</h2>
-          <p>We educate warriors Keep Updated</p>
-          <Link to="/announcements">All</Link>
+          <SectionTop
+            title={"Announcements"}
+            mssg={"We educate warriors Keep Updated"}
+            link={"annoncements"}
+          />
         </div>
 
-        {/*  first check the props.announcemets whether its ture or false */}
+        {/*  first check the announcemets whether its ture or false */}
         {announcements ? (
-          // if the props.announcemets is true the content
+          // if the announcemets is true render Posts
           <div className="announ_body">
             {announcements.map(announcement => (
-              <div className="post" key={announcement.id}>
-                <div className="post_head">
-                  <div className="post_img">
-                    <img src={announcement.img} alt="member face" />
-                  </div>
-                  <div className="post_info">
-                    <h4>{announcement.memberName}</h4>
-                    <p>{announcement.department}</p>
-                  </div>
-                </div>
-                <div className="post_body">
-                  <p>{announcement.post}</p>
-                </div>
-              </div>
+              <Post announcement={announcement} key={announcement.id} />
             ))}
           </div>
         ) : (
-          // if the props.announcemets is false render Loading
-          <div id="loading">
-            <h1>Loading Posts...</h1>
-          </div>
+          // if the announcemets is false render Loading
+          <Loading />
         )}
       </div>
     );

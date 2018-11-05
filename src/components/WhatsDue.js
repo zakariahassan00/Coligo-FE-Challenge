@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTodos } from "../actions/todosAction";
+import Loading from "./common/loading";
+import Todo from "./common/todo";
+import SectionTop from "./common/sectionTop";
 
 class WhatsDue extends Component {
   // getting the fake data from redux
-  componentWillMount() {
+  componentDidMount() {
     this.props.getTodos();
   }
 
@@ -13,41 +16,23 @@ class WhatsDue extends Component {
     return (
       <div className="whatsDue">
         <div className="todo_head">
-          <h3>What`s Due</h3>
-          <p>Somtimes "LATER" becomes "NEVER. Go Now!</p>
-          <a href="/">All</a>
+          <SectionTop
+            title={"What`s Due"}
+            mssg={'Somtimes "LATER" becomes "NEVER. Go Now!'}
+            link={""}
+          />
         </div>
-
-        {/* first check props.tods whether its ture or false  */}
+        {/* first check todos whether its ture or false  */}
         {todos ? (
-          // if the props.todos is true render the content
+          // if the todos is true render Todos
           <div className="todo_body">
             {todos.map(todo => (
-              <div className="todo_content" key={todo.id}>
-                <div className="todo_title">
-                  <h4>
-                    <span>
-                      <i className={todo.img} />
-                    </span>{" "}
-                    {todo.todoName}
-                  </h4>
-                </div>
-                <div className="todo_info">
-                  <p>Course: {todo.course}</p>
-                  <p>Topic : {todo.topic}</p>
-                  <p>Due To: {todo.dueTo}</p>
-                </div>
-                <button type="submit" id="todo_btn">
-                  {todo.btn}
-                </button>
-              </div>
+              <Todo todo={todo} key={todo.id} />
             ))}
           </div>
         ) : (
-          // if the props.todos is false render Loading
-          <div id="loading">
-            <h1>Loading...</h1>
-          </div>
+          // if the todos is false render Loading
+          <Loading />
         )}
       </div>
     );

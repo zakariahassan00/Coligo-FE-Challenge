@@ -60,9 +60,7 @@ class Sidebar extends Component {
         <div className="sidebar_body">
           <ul>
             {elements.map(element => (
-              <li className="item" key={element.id}>
-                <SideBarElement element={element} />
-              </li>
+              <SideBarElement element={element} key={element.id} />
             ))}
           </ul>
         </div>

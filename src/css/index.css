@@ -303,6 +303,11 @@ nav {
   color: #191970;
 }
 
+.announ_heading p {
+  color: #808080;
+  font-size: 14px;
+}
+
 .announ_body {
   width: 100%;
   padding: 0 5px;
