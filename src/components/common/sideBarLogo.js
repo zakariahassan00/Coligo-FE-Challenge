@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class NavLogo extends Component {
+class SideBarLogo extends Component {
   render() {
     const { name, img } = this.props;
     return (
@@ -14,4 +14,4 @@ class NavLogo extends Component {
   }
 }
 
-export default NavLogo;
+export default SideBarLogo;

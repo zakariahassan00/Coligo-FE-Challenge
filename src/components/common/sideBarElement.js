@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class NavElement extends Component {
+class SideBarElement extends Component {
   render() {
     const { element } = this.props;
     const link = element.name.toLowerCase();
@@ -17,4 +17,4 @@ class NavElement extends Component {
   }
 }
 
-export default NavElement;
+export default SideBarElement;
